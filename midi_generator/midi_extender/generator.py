@@ -7,7 +7,7 @@ vocab = sorted(set(text))
 char2idx = {u: i for i, u in enumerate(vocab)}
 idx2char = np.array(vocab)
 
-model = tf.keras.models.load_model("midi_generator/midi_extender/rnn_model/model_save/40epoch")
+model = tf.keras.models.load_model("midi_generator/midi_extender/rnn_model/model_save/60epoch")
 
 def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
     model = tf.keras.Sequential([
