@@ -2,12 +2,12 @@ import tensorflow as tf
 import numpy as np
 
 
-text = open("midi_generator/midi_extender/rnn_model/vocab.txt", 'rt', encoding="utf8").read()
+text = open("midi_generator/midi_extender/rnn_model/vocav_full.txt", 'rt', encoding='utf-8').read()
 vocab = sorted(set(text))
 char2idx = {u: i for i, u in enumerate(vocab)}
 idx2char = np.array(vocab)
 
-model = tf.keras.models.load_model("midi_generator/midi_extender/rnn_model/model_save/60epoch")
+model = tf.keras.models.load_model("midi_generator/midi_extender/rnn_model/model_save/class2_50epoch")
 
 def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
     model = tf.keras.Sequential([
@@ -34,8 +34,8 @@ def loss(labels, logits):
 
 def generate_text(model, gen_len, start_string):
     num_generate = gen_len
-
-    input_eval = [char2idx[s] for s in start_string]
+    start = start_string
+    input_eval = [char2idx[s] for s in start]
     input_eval = tf.expand_dims(input_eval, 0)
 
     text_generated = []
