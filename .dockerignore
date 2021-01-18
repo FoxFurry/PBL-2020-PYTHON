@@ -4,3 +4,6 @@ venv/*
 idea/
 idea/*
 idea
+deployment
+deployment/
+deployment/*

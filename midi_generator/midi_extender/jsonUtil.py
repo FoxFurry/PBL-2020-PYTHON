@@ -1,5 +1,5 @@
 def getFields(raw):
-    result = [];
+    result = []
 
     start = raw.find('"generateLen":"') + len('"generateLen":"')
     end = raw.find('","source":"')

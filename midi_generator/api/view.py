@@ -1,9 +1,7 @@
 from flask import Blueprint
 from flask import request
-from flask import abort
 
 import json
-from midi_generator.midi_extender.jsonUtil import getFields
 from midi_generator.midi_extender.jsonUtil import intArrayToString
 from midi_generator.midi_extender.generator import generate
 
